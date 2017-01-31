@@ -3415,9 +3415,9 @@ text4 = [[
 return text4
 end
 
-if matches[1] == "انلاینی" and is_mod(msg) then
+if matches[1] == "pg" and is_mod(msg) then
 text5 = [[
-😐 آنلاین بودیم وقتی آنلاین بودن مد نبود!
+😐 سخت مشغولم...!
 ]]
 return text5
 end
