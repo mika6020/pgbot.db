@@ -38,17 +38,17 @@ end
           welcome = 'yes'
           },
    mutes = {
-                  mute_fwd = 'no',
-                  mute_audio = 'no',
-                  mute_video = 'no',
-                  mute_contact = 'no',
+                  mute_fwd = 'yes',
+                  mute_audio = 'yes',
+                  mute_video = 'yes',
+                  mute_contact = 'yes',
                   mute_text = 'no',
-                  mute_photos = 'no',
-                  mute_gif = 'no',
-                  mute_loc = 'no',
-                  mute_doc = 'no',
-                  mute_sticker = 'no',
-                  mute_voice = 'no',
+                  mute_photos = 'yes',
+                  mute_gif = 'yes',
+                  mute_loc = 'yes',
+                  mute_doc = 'yes',
+                  mute_sticker = 'yes',
+                  mute_voice = 'yes',
                    mute_all = 'no'
           }
       }
@@ -1472,7 +1472,7 @@ local expiretime = redis:hget('expiretime', msg.chat_id_)
 
 if not lang then
 local settings = data[tostring(target)]["settings"]
- text = "🔰*Group Settings*🔰\n\n🔐_Lock edit :_ *"..settings.lock_edit.."*\n🔐_Lock links :_ *"..settings.lock_link.."*\n🔐_Lock fosh :_ *"..settings.lock_operator.."*\n🔐_Lock operator :_ *"..settings.lock_operator.."*\n🔐_Lock tags :_ *"..settings.lock_tag.."*\n🔐_Lock Arabic/Persian* :_ *"..settings.lock_arabic.."*\n🔐_Lock english* :_ *"..settings.lock_english.."*\n🔐_Lock flood :_ *"..settings.flood.."*\n🔐_Lock spam :_ *"..settings.lock_spam.."*\n🔐_Lock mention :_ *"..settings.lock_mention.."*\n🔐_Lock webpage :_ *"..settings.lock_webpage.."*\n🔐_Lock markdown :_ *"..settings.lock_markdown.."*\n🔐_Bots protection :_ *"..settings.lock_bots.."*\n🔐_Flood sensitivity :_ *"..NUM_MSG_MAX.."*\n✋_welcome :_ *"..settings.welcome.."*\n*__________________*\n⏱_expite time :_ *"..expire.."*\n*____________________*\n*Language* : *EN*"
+ text = "🔰*Group Settings*🔰\n\n🔐_Lock edit :_ *"..settings.lock_edit.."*\n🔐_Lock links :_ *"..settings.lock_link.."*\n🔐_Lock fosh :_ *"..settings.lock_fosh.."*\n🔐_Lock operator :_ *"..settings.lock_operator.."*\n🔐_Lock tags :_ *"..settings.lock_tag.."*\n🔐_Lock Arabic/Persian* :_ *"..settings.lock_arabic.."*\n🔐_Lock english* :_ *"..settings.lock_english.."*\n🔐_Lock flood :_ *"..settings.flood.."*\n🔐_Lock spam :_ *"..settings.lock_spam.."*\n🔐_Lock mention :_ *"..settings.lock_mention.."*\n🔐_Lock webpage :_ *"..settings.lock_webpage.."*\n🔐_Lock markdown :_ *"..settings.lock_markdown.."*\n🔐_Bots protection :_ *"..settings.lock_bots.."*\n🔐_Flood sensitivity :_ *"..NUM_MSG_MAX.."*\n✋_welcome :_ *"..settings.welcome.."*\n*__________________*\n⏱_expite time :_ *"..expire.."*\n*____________________*\n*Language* : *EN*"
 else
 local settings = data[tostring(target)]["settings"]
 text = "🔰*تنظیمات گروه*🔰\n\n🔐_قفل ویرایش پیام :_ *"..settings.lock_edit.."*\n🔐_قفل لینک :_ *"..settings.lock_link.."*\n🔐_قفل فحش :_ *"..settings.lock_fosh.."*\n🔐_قفل اپراتور :_ *"..settings.lock_operator.."*\n🔐_قفل تگ :_ *"..settings.lock_tag.."*\n🔐_قفل فارسی و عربی* :_ *"..settings.lock_arabic.."*\n🔐_قفل انگلیسی* :_ *"..settings.lock_english.."*\n🔐_قفل پیام مکرر :_ *"..settings.flood.."*\n🔐_قفل هرزنامه :_ *"..settings.lock_spam.."*\n🔐_قفل فراخوانی :_ *"..settings.lock_mention.."*\n🔐_قفل صفحات وب :_ *"..settings.lock_webpage.."*\n🔐_قفل فونت :_ *"..settings.lock_markdown.."*\n🔐_محافظت در برابر ربات ها :_ *"..settings.lock_bots.."*\n🔐_حداکثر پیام مکرر :_ *"..NUM_MSG_MAX.."*\n✋_پیام خوش آمد گویی :_ *"..settings.welcome.."*\n*__________________*\n⏱_انقضای ربات :_ *"..expire.."*\n*____________________*\n*Language* : *fa*"
@@ -2605,6 +2605,9 @@ end
 if matches[2] == "arabic" then
 return lock_arabic(msg, data, target)
 end
+if matches[2] == "english" then
+return lock_english(msg, data, target)
+end
 if matches[2] == "edit" then
 return lock_edit(msg, data, target)
 end
@@ -2633,6 +2636,9 @@ end
 if matches[2] == "fosh" then
 return unlock_fosh(msg, data, target)
 end
+if matches[2] == "operator" then
+return unlock_operator(msg, data, target)
+end
 if matches[2] == "tag" then
 return unlock_tag(msg, data, target)
 end
@@ -2641,6 +2647,9 @@ return unlock_mention(msg, data, target)
 end
 if matches[2] == "arabic" then
 return unlock_arabic(msg, data, target)
+end
+if matches[2] == "english" then
+return unlock_english(msg, data, target)
 end
 if matches[2] == "edit" then
 return unlock_edit(msg, data, target)
