@@ -86,7 +86,7 @@ function create_config( )
     "mute-time",
     "del",
     "lock_operator",
-	"lock-fosh"
+	"lock_fosh"
  },
     sudo_users = {123456789},
     admins = {},
