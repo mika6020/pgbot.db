@@ -343,6 +343,14 @@ if arabic_msg and lock_arabic == "yes" then
 kick_user(user, chat)
    end
 end
+local english_msg = msg.text:match("[A-Z-a-z]") or msg.text:match("[Aa][Bb][Cc][Dd][Ee][Ff][Gg][Hh][Ii][Jj][Kk][Ll][Mm][Nn][Oo][Pp][Qq][Rr][Ss][Tt][Uu][Vv][Ww][Xx][Yy][Zz]")
+if english_msg and lock_english == "yes" then
+ if is_channel then
+ del_msg(msg.chat_id_, tonumber(msg.id_))
+  elseif is_chat then
+kick_user(user, chat)
+   end
+end
 if msg.text:match("(.*)")
 and mute_text == "yes" then
  if is_channel then
