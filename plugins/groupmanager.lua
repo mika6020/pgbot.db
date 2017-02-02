@@ -46,7 +46,7 @@ end
                   mute_text = 'no',
                   mute_photo = 'yes',
                   mute_gif = 'yes',
-                  mute_Location = 'yes',
+                  mute_location = 'yes',
                   mute_document = 'yes',
                   mute_sticker = 'yes',
                   mute_voice = 'yes',
