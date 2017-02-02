@@ -93,14 +93,10 @@ function create_config( )
     disabled_channels = {},
     moderation = {data = './data/moderation.json'},
     info_text = [[》dbtel.ir
-
 🔰sudo id :
 》@mika6020《
-
-
 🔰bot id :
 》@pgbot《
-
 🔰Our website :
 》http://dbtel.ir
 ]],

@@ -26,29 +26,33 @@ end
       settings = {
           lock_link = 'yes',
           lock_tag = 'yes',
-		  lock_fosh = 'yes',
-        lock_operator = 'no',
+		      lock_fosh = 'yes',
+          lock_operator = 'no',
           lock_spam = 'yes',
           lock_webpage = 'yes',
-		  lock_arabic = 'no',
-		  lock_english = 'no',
+		      lock_arabic = 'no',
+		      lock_english = 'no',
           lock_markdown = 'yes',
+          lock_mention = 'yes',
           flood = 'yes',
           lock_bots = 'yes',
-          welcome = 'yes'
+          welcome = 'no'
           },
    mutes = {
-                  mute_fwd = 'yes',
+                  mute_forward = 'yes',
                   mute_audio = 'yes',
                   mute_video = 'yes',
                   mute_contact = 'yes',
                   mute_text = 'no',
-                  mute_photos = 'yes',
+                  mute_photo = 'yes',
                   mute_gif = 'yes',
-                  mute_loc = 'yes',
-                  mute_doc = 'yes',
+                  mute_Location = 'yes',
+                  mute_document = 'yes',
                   mute_sticker = 'yes',
                   mute_voice = 'yes',
+                  mute_game = 'yes',
+                  mute_inline = 'yes',
+                  mute_tgservice = 'yes',
                    mute_all = 'no'
           }
       }
