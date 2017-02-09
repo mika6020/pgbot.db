@@ -1,7 +1,7 @@
 tdcli = dofile('./tg/tdcli.lua')
 serpent = (loadfile "./libs/serpent.lua")()
 feedparser = (loadfile "./libs/feedparser.lua")()
-our_id = 123456789 -- Put Here Your Bot ID
+our_id = 272424552 -- Put Here Your Bot ID
 URL = require "socket.url"
 http = require "socket.http"
 https = require "ssl.https"
@@ -84,21 +84,23 @@ function create_config( )
     "tools",
     "expiretime",
     "mute-time",
-    "del",
     "lock_operator",
-	"lock_fosh"
+    "del",
+	"lock-fosh"
+
  },
-    sudo_users = {123456789},
+    sudo_users = {274283910},
     admins = {},
     disabled_channels = {},
     moderation = {data = './data/moderation.json'},
     info_text = [[》dbtel.ir
-🔰sudo id :
-》@mika6020《
-🔰bot id :
-》@pgbot《
-🔰Our website :
-》http://dbtel.ir
+
+    🔰sudo id :
+    》@mika6020《
+    🔰bot id :
+    》@pgbot《
+    🔰Our website :
+    》http://dbtel.ir
 ]],
   }
   serialize_to_file(config, './data/config.lua')
@@ -486,7 +488,7 @@ local hash = "gp_lang:"..chat_id
 local lang = redis:get(hash)
     local data = load_data(_config.moderation.data)
     local i = 1
-  if not data[tostring(msg.chat_id_)] then
+  if not data[tostring(chat_id)] then
   if not lang then
     return '_Group is not added_'
 else
@@ -518,7 +520,7 @@ local hash = "gp_lang:"..chat_id
 local lang = redis:get(hash)
     local data = load_data(_config.moderation.data)
     local i = 1
-  if not data[tostring(msg.chat_id_)] then
+  if not data[tostring(chat_id)] then
   if not lang then
     return '_Group is not added_'
 else
@@ -886,8 +888,3 @@ elseif msg.content_.ID == "MessageGame" then
   end
 
 end
--- کد های پایین در ربات نشان داده نمیشوند
--- http://permag.ir
--- @permag_ir
--- @permag_bots
--- @permag
